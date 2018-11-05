@@ -5,6 +5,7 @@ mvn compile <br>
 
 ## chrome:
 mvn -Dtest=SecondTest -Dbrowser=chrome verify<br>
+mvn -Dtest=Case1 -Dbrowser=chrome verify<br>
 ## firefox:
 mvn -Dtest=SecondTest -Dbrowser=firefox verify<br>
 ## opera:
