@@ -7,23 +7,6 @@ import org.openqa.selenium.*;
 public class SecondTest extends BaseRunner {
 
 
-    /*public void test1() {
-        driver.get("https://moscow-job.tinkoff.ru/");
-        driver.findElement(By.name("fio")).click();
-        driver.findElement(By.name("email")).click();
-        assertEquals("Поле обязательное", driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Фамилия, имя и отчество'])[1]/following::div[3]")).getText());
-        driver.findElement(By.name("phone")).click();
-        assertEquals("Поле обязательное", driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Электронная почта'])[1]/following::div[3]")).getText());
-        driver.findElement(By.name("city")).click();
-        assertEquals("Необходимо указать номер телефона", driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Номер телефона'])[1]/following::div[3]")).getText());
-        driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Город'])[1]/following::div[10]")).click();
-        assertEquals("Поле обязательное", driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Город'])[1]/following::div[3]")).getText());
-        driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Номер телефона'])[1]/following::div[3]")).click();
-        assertEquals("Поле обязательное", driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Специалист отдела электронной корреспонденции'])[2]/following::div[5]")).getText());
-    }*/
-    //*[@id="form"]/div/article/div[2]/div/form/div[1]/div/div[2]
-    //*[@id="form"]/div/article/div[2]/div/form/div[1]/div/div[1]/div/div/div/label/input
-    //*[@id="form"]/div/article/div[2]/div/form/div[4]/div/div[1]/div/label/input
     @Test
     public void test1() {
         driver.get("https://moscow-job.tinkoff.ru/");
