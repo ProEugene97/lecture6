@@ -25,7 +25,7 @@ public class Case1 extends BaseRunner{
                     }
                     return d.getTitle();
                 });
-
+        wait.until(d -> driver.findElements(By.cssSelector("a[href*='https://www.tinkoff.ru/mobile-operator/tariffs/']")).size() > 0);
         driver.findElement(By.cssSelector("a[href*='https://www.tinkoff.ru/mobile-operator/tariffs/']")).click();
         wait.until(d -> {
             boolean check = false;
