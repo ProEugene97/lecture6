@@ -23,7 +23,7 @@ public class Case1 extends BaseRunner{
                         if (el.getText().equals("мобайл тинькофф тарифы")) el.click();
                         break;
                     }
-                    return d.getTitle();
+                    return d.getTitle().equals("мобайл тинькофф тарифы - Поиск в Google");
                 });
         wait.until(d -> driver.findElements(By.cssSelector("a[href*='https://www.tinkoff.ru/mobile-operator/tariffs/']")).size() > 0);
         driver.findElement(By.cssSelector("a[href*='https://www.tinkoff.ru/mobile-operator/tariffs/']")).click();
