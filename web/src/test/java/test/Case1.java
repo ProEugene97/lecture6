@@ -14,7 +14,7 @@ public class Case1 extends BaseRunner {
     public void  exe(){
         GoogleMainPage googleMainPage = app.google;
         googleMainPage.open();
-        googleMainPage.openSearchResultsPageByRequest("мобайл тинькофф тарифы", "мобайл тинькофф тарифы");
+        googleMainPage.openSearchResultsPageByRequest("тинькофф мобайл тарифы");
         GoogleResultPage googleResultPage = app.googleResults;
         googleResultPage.clickSearchResultsByLinkContains("https://www.tinkoff.ru/mobile-operator/tariffs/");
         TinkoffJobPage job = app.tinkoffJob;
@@ -22,49 +22,6 @@ public class Case1 extends BaseRunner {
         job.closeCurrentTab();
         job.switchToMainTab();
         job.checkUrl("https://www.tinkoff.ru/mobile-operator/tariffs/");
-
-
-       /* WebDriverWait wait = new WebDriverWait(driver, 10);
-        driver.get("http://google.ru/");
-        driver.findElement(By.name("q")).sendKeys("мобайл тинькофф");
-        driver.findElements(By.xpath("//ul[@role='listbox']/li"));
-        wait.ignoring(StaleElementReferenceException.class)
-                .withMessage("Что-то пошло не так...")
-                .pollingEvery(Duration.ofMillis(500))
-                .until(d -> {
-                    By listItems = By.xpath("//ul[@role='listbox']/li[@role='presentation' and .//*[@role='option']]");
-                    List<WebElement> elements = driver.findElements(listItems);
-                    for (WebElement el : elements) {
-                        System.out.println(el.getText());
-                        if (el.getText().equals("мобайл тинькофф тарифы")) el.click();
-                        break;
-                    }
-                    return d.getTitle().equals("мобайл тинькофф тарифы - Поиск в Google");
-                });
-        wait.until(d -> driver.findElements(By.cssSelector("a[href*='https://www.tinkoff.ru/mobile-operator/tariffs/']")).size() > 0);
-        driver.findElement(By.cssSelector("a[href*='https://www.tinkoff.ru/mobile-operator/tariffs/']")).click();
-        wait.until(d -> {
-            boolean check = false;
-            for (String title : driver.getWindowHandles()) {
-                driver.switchTo().window(title);
-                System.out.println(d.getTitle());
-                check = d.getTitle().equals("Тарифы Тинькофф Мобайл");
-            }
-            return check;
-        });
-        wait.until(d -> {
-            boolean check = false;
-            for (String title : driver.getWindowHandles()) {
-                driver.switchTo().window(title);
-                check = d.getTitle().equals("мобайл тинькофф тарифы - Поиск в Google");
-                System.out.println(d.getTitle());
-                break;
-            }
-            return check;
-        });
-        driver.close();
-        driver.switchTo().window(driver.getWindowHandles().iterator().next());
-        wait.until(d -> driver.getCurrentUrl().equals("https://www.tinkoff.ru/mobile-operator/tariffs/"));
-    */}
+    }
 
 }

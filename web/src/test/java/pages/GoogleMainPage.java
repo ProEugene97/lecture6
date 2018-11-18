@@ -25,10 +25,9 @@ public class GoogleMainPage extends Page {
         isLoadedByTitleContains("Google");
     }
 
-    public void openSearchResultsPageByRequest(String request, String res_request) {
+    public void openSearchResultsPageByRequest(String request) {
         searchField.sendKeys(request);
         //ожидание, игнорирующее StaleElementReferenceException
-        driver.findElements(By.xpath("//ul[@role='listbox']/li"));
         wait.ignoring(StaleElementReferenceException.class)
                 .withMessage("Что-то пошло не так...")
                 .pollingEvery(Duration.ofMillis(500))
@@ -37,10 +36,10 @@ public class GoogleMainPage extends Page {
                     List<WebElement> elements = driver.findElements(listItems);
                     for (WebElement el : elements) {
                         System.out.println(el.getText());
-                        if (el.getText().equals("мобайл тинькофф тарифы")) el.click();
+                        if (el.getText().equals(request)) el.click();
                         break;
                     }
-                    return d.getTitle().equals("мобайл тинькофф тарифы - Поиск в Google");
+                    return d.getTitle().equals(request +" - Поиск в Google");
                 });
     }
 
