@@ -1,14 +1,30 @@
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.GoogleMainPage;
+import pages.GoogleResultPage;
+import pages.TinkoffJobPage;
+import test.BaseRunner;
 
 import java.time.Duration;
 import java.util.List;
 
-public class Case1 extends BaseRunner{
+public class Case1 extends BaseRunner {
     @Test
     public void  exe(){
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        GoogleMainPage googleMainPage = app.google;
+        googleMainPage.open();
+        googleMainPage.openSearchResultsPageByRequest("мобайл тинькофф тарифы", "мобайл тинькофф тарифы");
+        GoogleResultPage googleResultPage = app.googleResults;
+        googleResultPage.clickSearchResultsByLinkContains("https://www.tinkoff.ru/mobile-operator/tariffs/");
+        TinkoffJobPage job = app.tinkoffJob;
+        job.switchToMainTab();
+        job.closeCurrentTab();
+        job.switchToMainTab();
+        job.checkUrl("https://www.tinkoff.ru/mobile-operator/tariffs/");
+
+
+       /* WebDriverWait wait = new WebDriverWait(driver, 10);
         driver.get("http://google.ru/");
         driver.findElement(By.name("q")).sendKeys("мобайл тинькофф");
         driver.findElements(By.xpath("//ul[@role='listbox']/li"));
@@ -49,5 +65,6 @@ public class Case1 extends BaseRunner{
         driver.close();
         driver.switchTo().window(driver.getWindowHandles().iterator().next());
         wait.until(d -> driver.getCurrentUrl().equals("https://www.tinkoff.ru/mobile-operator/tariffs/"));
-    }
+    */}
+
 }
